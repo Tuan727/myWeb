@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $db->close();
 
     // Redirect to a success page (optional)
-    header("Location: login.html");
+    header("Location: ../ogin.html");
     exit();
 }
 ?>
