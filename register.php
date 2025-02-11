@@ -1,35 +1,31 @@
+<!-- filepath: /d:/Web Developement/register.php -->
 <?php
-// Connect to the SQLite database
-$db = new PDO('sqlite:data.db');
-
-// Create the table if it doesn't exist
-$db->exec("CREATE TABLE IF NOT EXISTS users (
-    user TEXT PRIMARY KEY,
-    pass TEXT,
-    score INTEGER
-)");
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $repeatPassword = $_POST['repeat-password'];
+    $score = 0;
 
-    // Validate password length
-    if (strlen($password) < 8) {
-        echo "Password must be at least 8 characters long!";
-        exit();
-    }
+    // Hash the password for security
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Validate passwords match
-    if ($password !== $repeatPassword) {
-        echo "Passwords do not match!";
-        exit();
-    }
+    // Create (connect to) SQLite database in file
+    $db = new SQLite3('data.db');
 
-    // Insert the user data into the database
-    $stmt = $db->prepare("INSERT INTO users (user, pass, score) VALUES (?, ?, ?)");
-    $stmt->execute([$username, $password, 0]);
+    // Create table if not exists
+    $db->exec("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, user TEXT, pass TEXT, score INTEGER)");
 
-    echo "Registration successful!";
+    // Insert data into table
+    $stmt = $db->prepare("INSERT INTO users (user, pass, score) VALUES (:user, :pass, :score)");
+    $stmt->bindValue(':user', $username, SQLITE3_TEXT);
+    $stmt->bindValue(':pass', $hashed_password, SQLITE3_TEXT);
+    $stmt->bindValue(':score', $score, SQLITE3_INTEGER);
+    $stmt->execute();
+
+    // Close the database connection
+    $db->close();
+
+    // Redirect to a success page (optional)
+    header("Location: login.html");
+    exit();
 }
 ?>

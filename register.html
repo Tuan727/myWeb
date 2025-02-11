@@ -23,7 +23,7 @@
 <body>
 <div class="register-form">
     <h2>Register</h2>
-    <form method="POST" action="register.php">
+    <form onsubmit="validateForm;" method="POST" action="register.php">
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" id="password" placeholder="Password" required>
         <input type="password" name="repeat-password" id="repeat-password" placeholder="Repeat Password" required>
