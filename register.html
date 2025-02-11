@@ -4,27 +4,12 @@
     <meta charset="UTF-8">
     <title>Register Form</title>
     <link rel="stylesheet" type="text/css" href="register.css">
-    <script>
-        function validateForm() {
-            let password = document.getElementById("password").value;
-            let repeatPassword = document.getElementById("repeat-password").value;
-            if (password.length < 8) {
-                alert("Password must be at least 8 characters long!");
-                return false;
-            }
-            if (password !== repeatPassword) {
-                alert("Passwords do not match!");
-                return false;
-            }
-            return true;
-        }
-    </script>
 </head>
 <body>
 <div class="register-form">
     <h2>Register</h2>
-    <form onsubmit="validateForm;" method="POST" action="register.php">
-        <input type="text" name="username" placeholder="Username" required>
+    <form onsubmit=" validateForm()">
+        <input type="text" id="username" name="username" placeholder="Username" required>
         <input type="password" name="password" id="password" placeholder="Password" required>
         <input type="password" name="repeat-password" id="repeat-password" placeholder="Repeat Password" required>
         <button type="submit">Register</button>

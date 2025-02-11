@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@supabase/supabase-js": "^2.48.1",
+    "mongodb": "6.13",
+    "requirejs": "^2.3.7"
+  },
+  "type": "module"
+}
