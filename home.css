@@ -1,0 +1,78 @@
+
+body {
+    background-color: rgb(60,60,60);
+    color: white;
+}
+#nav {
+    display: flex;
+    width: 120%;
+    margin: -1%;
+    background-color: black;
+    padding-top: 2%;
+    padding-left: 3%;
+}
+
+#logout {
+    height: 50%;
+    margin: 2%;
+    margin-top: 1.7%;
+    margin-left: 2%;
+}
+
+.username {
+    color: cyan;
+    font-weight: bolder;
+}
+
+#textbox {
+    position: fixed;
+    bottom: 1%;
+    width: 100%;
+}
+
+#logo {
+    padding-right: 5%;
+}
+
+#message {
+    width: 94%;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+}
+
+.nav-item {
+    padding-left: 5%;
+    padding: 1%;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    font-size: 30px;
+    color: white;
+}
+
+#welcome {
+    margin-left: 40%;
+}
+
+#game {
+    margin-left: 5%;
+}
+
+#content {
+    margin: 5%;
+}
+
+#pay_info {
+    width: 100%;
+    border: #4CAF50 1px solid;
+    align-content: center;
+}
+.center {
+    display: block;
+    margin: auto;
+}
+
+a {
+    color: white;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BananaClicker</title>
+        <link id="theme" rel="stylesheet" href="style-game.css">
+        <link rel="icon" href="/resources/favicon.ico" type="image/x-icon">
+        <meta name="Author" content="Tuan">
+    </head>
+
+    <body>
+        <header>
+            <div>
+                <nav id="nav-bar">
+                    <a href="index.html"><img src="/resources/favicon.png" alt="logo" height="80px" id="logo"></a>
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-item">Home</a></li>
+                        <li><a href="#" class="nav-item">Menu</a></li>
+                        <li><a href="#" class="nav-item">Leaderboard</a></li>
+                        <li><a href="store.html" class="nav-item">Store</a></li>
+                        <li><p class="nav-item" id="welcome">Welcome, <span id="name"></span></p></li>
+                        <button id="logout">Log out</button>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div id="money">
+                <img src="/resources/coin.png" alt="coin" height="50px">
+                <h2 id="click">0</h2>
+            </div>
+            <div id="main-screen">
+                
+                <div id="click-banana">
+                    <img src="/resources/banana.png" alt="banana" height="300px" width="300px" id="bnn">
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div>
+                <nav id="contact">
+                    <h2 id="contact-head">Contact us</h2>
+                    <ul class="contact-list ">
+                        <li class="contact-item">Email: <a href="#" class="contact-link" type="">bc123@gmail.com</a></li>
+                        <li class="contact-item">Tel: <a href="#" class="contact-link" type=""> (+84) 123 456 789</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+        <script type="module" src="game.js" defer></script>
+        <script type="module" src="home.js" defer></script>
+    </body>
+</html>

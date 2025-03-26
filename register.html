@@ -7,13 +7,17 @@
 </head>
 <body>
 <div class="register-form">
-    <h2>Register</h2>
-    <form onsubmit=" validateForm()">
-        <input type="text" id="username" name="username" placeholder="Username" required>
-        <input type="password" name="password" id="password" placeholder="Password" required>
-        <input type="password" name="repeat-password" id="repeat-password" placeholder="Repeat Password" required>
-        <button type="submit">Register</button>
+    
+    <form>
+        <h2>Register</h2>
+        <input type="user" id="user" placeholder="Display Name" required>
+        <input type="email" id="mail-reg" placeholder="Email" required>
+        <input type="password" id="pass-reg" placeholder="Password" required>
+        <input type="password" id="repeat-password" placeholder="Repeat Password" required>
+        <button type="submit" id="reg">Register</button>
     </form>
+    <a href="login.html">Go to login</a>
 </div>
+<script type="module" src="register.js" defer></script>
 </body>
 </html>
